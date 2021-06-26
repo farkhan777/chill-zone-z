@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\BlogCategory;
 
 class BlogCategoryController extends Controller
 {
@@ -14,6 +15,7 @@ class BlogCategoryController extends Controller
     public function index()
     {
         //
+        return view('blogcategories.index');
     }
 
     /**
@@ -24,6 +26,7 @@ class BlogCategoryController extends Controller
     public function create()
     {
         //
+        return view('blogcategories.create');
     }
 
     /**
@@ -35,6 +38,12 @@ class BlogCategoryController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'category_id' => 'required|max:11',
+            'blog_id' => 'required|max:11'
+        ]);
+        BlogCategory::create($request->all());
+        return redirect()->route('blogcategories.index');
     }
 
     /**
@@ -57,6 +66,8 @@ class BlogCategoryController extends Controller
     public function edit($id)
     {
         //
+        $blogCategory = BlogCategory::findOrFail($id);
+        return view('blogcategories.edit', compact('blogCategory'));
     }
 
     /**
@@ -69,6 +80,15 @@ class BlogCategoryController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'category_id' => 'required|max:11',
+            'blog_id' => 'required|max:11'
+        ]);
+        BlogCategory::findOrFail($id)->update([
+            'category_id' => $request->category_id,
+            'blog_id' => $request->blog_id,
+        ]);
+        return redirect()->route('blogcategories.index');
     }
 
     /**
@@ -80,5 +100,7 @@ class BlogCategoryController extends Controller
     public function destroy($id)
     {
         //
+        BlogCategory::findOrFail($id)->delete();
+        return redirect()->back();
     }
 }

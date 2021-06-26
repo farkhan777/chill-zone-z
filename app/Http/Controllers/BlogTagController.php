@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\BlogTag;
 
 class BlogTagController extends Controller
 {
@@ -14,6 +15,7 @@ class BlogTagController extends Controller
     public function index()
     {
         //
+        return view('blogtags.index');
     }
 
     /**
@@ -24,6 +26,7 @@ class BlogTagController extends Controller
     public function create()
     {
         //
+        return view('blogtags.create');
     }
 
     /**
@@ -35,6 +38,12 @@ class BlogTagController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'tag_id' => 'required|max:11',
+            'blog_id' => 'required|max:11'
+        ]);
+        BlogTag::create($request->all());
+        return redirect()->route('blogtags.index');
     }
 
     /**
@@ -57,6 +66,8 @@ class BlogTagController extends Controller
     public function edit($id)
     {
         //
+        $blogTag = BlogTag::findOrFail($id);
+        return view('blogtags.edit', compact('blogTag'));
     }
 
     /**
@@ -69,6 +80,15 @@ class BlogTagController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $request->validate([
+            'tag_id' => 'required|max:11',
+            'blog_id' => 'required|max:11'
+        ]);
+        BlogTag::findOrFail($id)->update([
+            'tag_id' => $request->tag_id,
+            'blog_id' => $request->blog_id,
+        ]);
+        return redirect()->route('blogtags.index');
     }
 
     /**
@@ -80,5 +100,7 @@ class BlogTagController extends Controller
     public function destroy($id)
     {
         //
+        BlogTag::findOrFail($id)->delete();
+        return redirect()->back();
     }
 }
