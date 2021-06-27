@@ -8,14 +8,14 @@
 		<!-- FONT AWESOME -->
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 		<!-- BOOTSTRAP GRID CSS -->
-		<link rel="stylesheet" href="{{ asset('') }}assets/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}"/>
 		<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/owl.carousel.min.css') }}">
 		<!-- COMMON CSS -->
 		<link rel="stylesheet" href="{{ asset('assets/css/common.css') }}" />
 		<!-- STYLE CSS -->
 		<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
 		<!-- Icon -->
-		<link rel="Icon" href="{{ asset('img/cz.png') }}">
+		<link rel="Icon" href="{{ asset('img/czz.png') }}">
 		<!-- RESPONSIVE CSS -->
 		<link rel="stylesheet" href="{{ asset('assets/css/responsive.css') }}" />	
 
@@ -28,7 +28,7 @@
 		<header id="header" class="header fixed-top">
 			<div class="container-fluid  container-xl d-flex align-items-center justify-content-between">
 		
-			  <a href="index.html" class="logo d-flex align-items-center">
+			  <a href="{{ route('home.index') }}" class="logo d-flex align-items-center">
 				<img src="{{ asset('img/Chillzone.png') }}" alt="">
 			  </a>
 		
@@ -62,7 +62,7 @@
 		<!-- FOOTER -->
 		<div class="footer_section">
 
-			<a aria-label='ChillZone' href="index.html"><img class="footer-logo" src="{{ asset('img/chillzoneWhite.png') }}" alt=""></a>
+			<a aria-label='ChillZone' href="{{ route('home.index') }}"><img class="footer-logo" src="{{ asset('img/chillzoneWhite.png') }}" alt=""></a>
 			
 
 			<div class="footer_section_social">
@@ -87,19 +87,19 @@
 			<div class="footer_section_mnu">
 				<ul class="footer_section_ul">
 					<li>
-						<a href="index.html">Home</a>
+						<a href="{{ route('home.index') }}">Home</a>
 					</li>
 					<li>
-						<a href="gallery.html">Gallery</a>
+						<a href="{{ route('gallery.index') }}">Gallery</a>
 					</li>
 					<li>
 						<a href="faq.html">FAQ</a>
 					</li>
 					<li>
-						<a href="about_us.html">About</a>
+						<a href="{{ route('about.index') }}">About</a>
 					</li>
 					<li>
-						<a href="contact.html">Contact</a>
+						<a href="{{ route('contact.index') }}">Contact</a>
 					</li>
 				</ul>
 			</div>

@@ -11,7 +11,7 @@
 					<div class="blog_title_btm">
 						<ul class="blog_title_btm_ul dis_flx">
 							<li>
-								<a href="">
+								<a href="{{ route('home.index') }}">
 									Home<i class="fa fa-angle-right"></i>
 								</a>
 							</li>
