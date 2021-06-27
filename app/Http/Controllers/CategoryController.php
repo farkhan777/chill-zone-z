@@ -46,8 +46,6 @@ class CategoryController extends Controller
         }
         $categories->save();
         return redirect()->back()->with('status','Icon Image Added Successfully');
-        Category::create($request->all());
-        return redirect()->route('categories.index');
     }
 
     /**
@@ -96,16 +94,7 @@ class CategoryController extends Controller
         }
         $categories->update();
         return redirect()->back()->with('status','Icon Image Updated Successfully');
-        // $request->validate([
-        //     'categoryName' => 'required|max:255',
-        //     'iconImage' => 'required|max:255'
-        // ]);
-        // Category::findOrFail($id)->update([
-        //     'categoryName' => $request->categoryName,
-        //     'iconImage' => $request->iconImage,
-        // ]);
-        // return redirect()->route('categories.index');
-     }
+    }
 
     /**
      * Remove the specified resource from storage.

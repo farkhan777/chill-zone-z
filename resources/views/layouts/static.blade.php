@@ -34,8 +34,8 @@
 		
 			  <nav id="navbar" class="navbar">
 				<ul>
-				  <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
-				  <li><a class="nav-link scrollto" href="gallery.html">Gallery</a></li>
+				  <li><a class="nav-link scrollto active" href="{{ route('home.index') }}">Home</a></li>
+				  <li><a class="nav-link scrollto" href="{{ route('gallery.index') }}">Gallery</a></li>
 				  <li><a class="nav-link scrollto" href="about_us.html">About</a></li>
 				  <li><a class="nav-link scrollto" href="contact.html">Contact</a></li>
 				  <li><a class="nav-link scrollto" href="contact_me.html">Author</a></li>
