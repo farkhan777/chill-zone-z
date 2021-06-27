@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Tag;
 
 class TagController extends Controller
 {
@@ -13,7 +14,8 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        $tags = Tag::all();
+        return view('tags.index', compact('tags'));
     }
 
     /**
@@ -23,7 +25,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        //
+        return view('tags.create');
     }
 
     /**
@@ -34,7 +36,11 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'tagName' => 'required|max:255',
+        ]);
+        Tag::create($request->all());
+        return redirect()->route('tags.index');
     }
 
     /**
@@ -56,8 +62,8 @@ class TagController extends Controller
      */
     public function edit($id)
     {
-        //
-    }
+        $tag = Tag::findOrFail($id);
+        return view('tags.edit', compact('tag'));    }
 
     /**
      * Update the specified resource in storage.
@@ -68,8 +74,13 @@ class TagController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $request->validate([
+            'tagName' => 'required|max:255',
+        ]);
+        Tag::findOrFail($id)->update([
+            'tagName' => $request->tagName,
+        ]);
+        return redirect()->route('tags.index');    }
 
     /**
      * Remove the specified resource from storage.
@@ -79,6 +90,6 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        Tag::findOrFail($id)->delete();
+        return redirect()->back();    }
 }
