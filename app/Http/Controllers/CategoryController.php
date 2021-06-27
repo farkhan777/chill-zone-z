@@ -15,7 +15,8 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('categories.index', compact('categories'));    }
+        return view('categories.index', compact('categories'));
+     }
 
     /**
      * Show the form for creating a new resource.
@@ -35,12 +36,19 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'categoryName' => 'required|max:255',
-            'iconImage' => 'required|max:255'
-        ]);
+        $categories = new Category;
+        $categories->categoryName = $request->input('categoryName');
+        if( $request->hasFile('iconImage') ) {
+            $file = $request->file('iconImage');
+            $filename  = time() . '.' . $file->getClientOriginalExtension();
+            $file->move('uploads/categories/', $filename);
+            $categories->iconImage = $filename;
+        }
+        $categories->save();
+        return redirect()->back()->with('status','Icon Image Added Successfully');
         Category::create($request->all());
-        return redirect()->route('categories.index');    }
+        return redirect()->route('categories.index');
+    }
 
     /**
      * Display the specified resource.
@@ -73,15 +81,31 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'categoryName' => 'required|max:255',
-            'iconImage' => 'required|max:255'
-        ]);
-        Category::findOrFail($id)->update([
-            'categoryName' => $request->categoryName,
-            'iconImage' => $request->iconImage,
-        ]);
-        return redirect()->route('categories.index');    }
+        $categories = Category::find($id);
+        $categories->categoryName = $request->input('categoryName');
+        if( $request->hasFile('iconImage') ) {
+            $destination= 'uploads/categories/'.$categories->iconImage;
+            if (File::exists($destination))
+            {
+                File::delete($destination);
+            }
+            $file = $request->file('iconImage');
+            $filename  = time() . '.' . $file->getClientOriginalExtension();
+            $file->move('uploads/tags/', $filename);
+            $categories->iconImage = $filename;
+        }
+        $categories->update();
+        return redirect()->back()->with('status','Icon Image Updated Successfully');
+        // $request->validate([
+        //     'categoryName' => 'required|max:255',
+        //     'iconImage' => 'required|max:255'
+        // ]);
+        // Category::findOrFail($id)->update([
+        //     'categoryName' => $request->categoryName,
+        //     'iconImage' => $request->iconImage,
+        // ]);
+        // return redirect()->route('categories.index');
+     }
 
     /**
      * Remove the specified resource from storage.
