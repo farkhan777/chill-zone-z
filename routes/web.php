@@ -19,7 +19,7 @@ use App\Http\Controllers\TagController;
 */
 
 Route::get('/', function () {
-    return view('guide');
+    return view('home');
 })->name('home.index');
 
 Route::get('/admin', function () {
