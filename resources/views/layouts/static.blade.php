@@ -37,8 +37,8 @@
 				  <li><a class="nav-link scrollto active" href="{{ route('home.index') }}">Home</a></li>
 				  <li><a class="nav-link scrollto" href="{{ route('gallery.index') }}">Gallery</a></li>
 				  <li><a class="nav-link scrollto" href="{{ route('about.index') }}">About</a></li>
-				  <li><a class="nav-link scrollto" href="contact.html">Contact</a></li>
-				  <li><a class="nav-link scrollto" href="contact_me.html">Author</a></li>
+				  <li><a class="nav-link scrollto" href="{{ route('contact.index') }}">Contact</a></li>
+				  <li><a class="nav-link scrollto" href="{{ route('author.index') }}">Author</a></li>
 				</ul>
 				<i class="bi bi-list mobile-nav-toggle">
 					<img src="{{ asset('img/hamburger.png') }}" alt="">
