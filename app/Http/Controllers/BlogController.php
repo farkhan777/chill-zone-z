@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class BlogController extends Controller
 {
@@ -13,7 +15,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('blogs.index');
+        $blogs = Blog::all();
+        return view('blogs.index', compact('blogs'));
     }
 
     /**
@@ -23,7 +26,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('blogs.create');
     }
 
     /**
@@ -34,7 +37,20 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $blogs = new Blog;
+        $blogs->title = $request->input('title');
+        $blogs->post = $request->input('post');
+        $blogs->post_excerpt = $request->input('post_excerpt');
+        $blogs->slug = $request->input('slug');
+        if( $request->hasFile('featuredImage') ) {
+            $file = $request->file('featuredImage');
+            $filename  = time() . '.' . $file->getClientOriginalExtension();
+            $file->move('uploads/blogs/', $filename);
+            $blogs->featuredImage = $filename;
+        }
+        $blogs->metaDescription = $request->input('metaDescription');
+        $blogs->save();
+        return redirect()->back()->with('status','Blog Image Added Successfully');
     }
 
     /**
@@ -45,7 +61,7 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -56,7 +72,8 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        //
+        $blogs = Blog::find($id);
+        return view('blogs.edit', compact('blogs'));
     }
 
     /**
@@ -68,7 +85,25 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $blogs = Blog::find($id);
+        $blogs->title = $request->input('title');
+        $blogs->post = $request->input('post');
+        $blogs->post_excerpt = $request->input('post_excerpt');
+        $blogs->slug = $request->input('slug');
+        if( $request->hasFile('featuredImage') ) {
+            $destination= 'uploads/blogs/'.$blogs->featuredImage;
+            if (File::exists($destination))
+            {
+                File::delete($destination);
+            }
+            $file = $request->file('featuredImage');
+            $filename  = time() . '.' . $file->getClientOriginalExtension();
+            $file->move('uploads/blogs/', $filename);
+            $blogs->featuredImage = $filename;
+        }
+        $blogs->metaDescription = $request->input('metaDescription');
+        $blogs->update();
+        return redirect()->back()->with('status','Blog Image Updated Successfully');
     }
 
     /**
@@ -79,6 +114,7 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Blog::findOrFail($id)->delete();
+        return redirect()->back();
     }
 }
