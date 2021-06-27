@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home.index');
 
+Route::get('/gallery', function () {
+    return view('gallery');
+})->name('gallery.index');
+
 Route::get('/admin', function () {
     return view('index');
 })->name('dashboard.index');
