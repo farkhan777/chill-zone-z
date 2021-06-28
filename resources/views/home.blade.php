@@ -149,11 +149,9 @@
 			<div class="pagination">
 				<ul class="pagination_ul d-flex">
 					<li>
-						<a aria-label='Previous' href="./index.html">
-							<i class="fas fa-chevron-left"></i>
-						</a>
+						{{ $home->links() }}
 					</li>
-					<li>
+					<!-- <li>
 						<a aria-label='One' href="./index.html">1</a>
 					</li>
 					<li>
@@ -167,6 +165,12 @@
 							<i class="fas fa-chevron-right"></i>
 						</a>
 					</li>
+
+					<span>
+						
+					</span>
+					-->
+					
 				</ul>
 			</div>
 			<!-- PAGINATION -->
