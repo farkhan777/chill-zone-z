@@ -16,7 +16,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
         return view('categories.index', compact('categories'));
-     }
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -38,6 +38,7 @@ class CategoryController extends Controller
     {
         $categories = new Category;
         $categories->categoryName = $request->input('categoryName');
+        $categories->projectLink = $request->input('projectLink');
         if( $request->hasFile('iconImage') ) {
             $file = $request->file('iconImage');
             $filename  = time() . '.' . $file->getClientOriginalExtension();
@@ -81,6 +82,7 @@ class CategoryController extends Controller
     {
         $categories = Category::find($id);
         $categories->categoryName = $request->input('categoryName');
+        $categories->projectLink = $request->input('projectLink');
         if( $request->hasFile('iconImage') ) {
             $destination= 'uploads/categories/'.$categories->iconImage;
             if (File::exists($destination))

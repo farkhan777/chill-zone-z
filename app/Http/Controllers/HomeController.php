@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     function show()
     {
-        $data = Blog::all();
+        $data = Blog::simplePaginate(6);
         return view('home',['home'=>$data]);
     }
 }
