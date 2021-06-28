@@ -28,14 +28,14 @@
 		<!-- BANNER -->
 
 		<!-- BODY -->
-		
+
 		<div class="home_body">
 			<div class="container">
 				<div class="latest_post">
 					<div class="latest_post_top">
 						<h1 class="latest_post_h1 brdr_line"></h1>
 					</div>
-					
+
 					<div class="row">
 						<div class="col-12 col-md-6 col-lg-4">
 							<a href="blog_post.html">
@@ -51,7 +51,7 @@
 								</div>
 							</a>
 						</div>
-					
+
 						<div class="col-12 col-md-6 col-lg-4">
 							<a href="blog_post.html">
 								<div class="home_card">
@@ -165,11 +165,11 @@
 							</a>
 						</div>
 
-						
+
 					</div>
 				</div>
 			</div>
-		
+
 		<!-- BODY -->
 
 @endsection
