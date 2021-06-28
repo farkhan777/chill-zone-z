@@ -42,6 +42,10 @@ Route::get('/blog', function () {
     return view('blog');
 })->name('blog.index');
 
+Route::get('/faq', function () {
+    return view('faq');
+})->name('faq.index');
+
 Route::get('/admin', function () {
     return view('index');
 })->name('dashboard.index');

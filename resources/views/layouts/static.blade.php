@@ -38,6 +38,7 @@
 				  <li><a class="nav-link scrollto" href="{{ route('gallery.index') }}">Gallery</a></li>
 				  <li><a class="nav-link scrollto" href="{{ route('about.index') }}">About</a></li>
 				  <li><a class="nav-link scrollto" href="{{ route('contact.index') }}">Contact</a></li>
+                  <li><a class="nav-link scrollto" href="{{ route('faq.index') }}">FAQ</a></li>
 				  <li><a class="nav-link scrollto" href="{{ route('author.index') }}">Author</a></li>
 				</ul>
 				<i class="bi bi-list mobile-nav-toggle">
