@@ -115,6 +115,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('categories.index') }}" class="nav-link {{Request::is('*categories*') ? 'active' : ''}}">
+                                <i class="nav-icon fas fa-box-open"></i>
+                                <p>
+                                    Category
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
