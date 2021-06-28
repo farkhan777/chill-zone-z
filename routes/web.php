@@ -38,6 +38,10 @@ Route::get('/author', function () {
     return view('author');
 })->name('author.index');
 
+Route::get('/blog', function () {
+    return view('blog');
+})->name('blog.index');
+
 Route::get('/admin', function () {
     return view('index');
 })->name('dashboard.index');
