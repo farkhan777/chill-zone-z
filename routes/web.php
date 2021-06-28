@@ -7,6 +7,8 @@ use App\Http\Controllers\BlogTagController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\TagController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\GalleryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -57,3 +59,4 @@ Route::resource('blogtags', BlogTagController::class);
 Route::resource('categories', CategoryController::class);
 Route::resource('tags', TagController::class);
 Route::get('/',[HomeController::class, 'show'])->name('home.index');
+Route::get('/gallery',[GalleryController::class, 'show'])->name('gallery.index');

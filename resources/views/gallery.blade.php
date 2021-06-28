@@ -37,135 +37,26 @@
 					</div>
 					
 					<div class="row">
-						<div class="col-12 col-md-6 col-lg-4">
-							<a href="blog_post.html">
-								<div class="home_card">
-									<div class="home_card_top_gallery">
-										<img src="{{ asset('img/Flutter Flight.jpg') }}" alt="image">
-									</div>
-									<div class="home_card_bottom">
-										<div class="home_card_bottom_text">
-											<p class="author_name">© Flutter Flight</p>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-					
-						<div class="col-12 col-md-6 col-lg-4">
-							<a href="blog_post.html">
-								<div class="home_card">
-									<div class="home_card_top_gallery">
-										<img src="{{ asset('img/Calling Arcadia.jpg') }}" alt="image">
-									</div>
-									<div class="home_card_bottom">
-										<div class="home_card_bottom_text">
-											<p class="author_name">© Calling Arcadia</p>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-12 col-md-6 col-lg-4">
-							<a href="blog_post.html">
-								<div class="home_card">
-									<div class="home_card_top_gallery">
-										<img src="{{ asset('img/Cobalt Cot.jpg') }}" alt="image">
-									</div>
-									<div class="home_card_bottom">
-										<div class="home_card_bottom_text">
-											<p class="author_name">© Cobalt Cot</p>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-12 col-md-6 col-lg-4">
-							<a href="blog_post.html">
-								<div class="home_card">
-									<div class="home_card_top_gallery">
-										<img src="img/Felicity.jpg" alt="image">
-									</div>
-									<div class="home_card_bottom">
-										<div class="home_card_bottom_text">
-											<p class="author_name">© Felicity</p>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-12 col-md-6 col-lg-4">
-							<a href="blog_post.html">
-								<div class="home_card">
-									<div class="home_card_top_gallery">
-										<img src="{{ asset('img/Let_s Isolate.jpg') }}" alt="image">
-									</div>
-									<div class="home_card_bottom">
-										<div class="home_card_bottom_text">
-											<p class="author_name">© Let_s Isolate</p>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-12 col-md-6 col-lg-4">
-							<a href="blog_post.html">
-								<div class="home_card">
-									<div class="home_card_top_gallery">
-										<img src="{{ asset('img/Jagged Edge.png') }}" alt="image">
-									</div>
-									<div class="home_card_bottom">
-										<div class="home_card_bottom_text">
-											<p class="author_name">© Jagged Edge</p>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-12 col-md-6 col-lg-4">
-							<a href="blog_post.html">
-								<div class="home_card">
-									<div class="home_card_top_gallery">
-										<img src="{{ asset('img/Sour Tower.png') }}" alt="image">
-									</div>
-									<div class="home_card_bottom">
-										<div class="home_card_bottom_text">
-											<p class="author_name">© Sour Tower</p>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-12 col-md-6 col-lg-4">
-							<a href="blog_post.html">
-								<div class="home_card">
-									<div class="home_card_top_gallery">
-										<img src="{{ asset('img/Overbooked.jpg') }}" alt="image">
-									</div>
-									<div class="home_card_bottom">
-										<div class="home_card_bottom_text">
-											<p class="author_name">© Overbooked</p>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-12 col-md-6 col-lg-4">
-							<a href="blog_post.html">
-								<div class="home_card">
-									<div class="home_card_top_gallery">
-										<img src="{{ asset('img/Rite of Passage.jpg') }}" alt="image">
-									</div>
-									<div class="home_card_bottom">
-										<div class="home_card_bottom_text">
-											<p class="author_name">© Rite of Passage</p>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
 
-						
+						@foreach ($gallery as $gal)
+						<div class="col-12 col-md-6 col-lg-4">
+							<a href="{{ $gal->projectLink }}">
+								<div class="home_card">
+									<div class="home_card_top_gallery">
+									<img src="{{ asset('uploads/categories/'.$gal->iconImage) }}" alt="image">
+									</div>
+									<div class="home_card_bottom">
+										<div class="home_card_bottom_text">
+											<p class="author_name">{{ $gal->categoryName }}</p>
+										</div>
+									</div>
+								</div>
+							</a>
+						</div>
+						@endforeach
+					</div>
+					
+			
 					</div>
 				</div>
 			</div>
