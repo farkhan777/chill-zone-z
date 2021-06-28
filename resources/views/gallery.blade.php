@@ -28,14 +28,14 @@
 		<!-- BANNER -->
 
 		<!-- BODY -->
-		
+
 		<div class="home_body">
 			<div class="container">
 				<div class="latest_post">
 					<div class="latest_post_top">
 						<h1 class="latest_post_h1 brdr_line"></h1>
 					</div>
-					
+
 					<div class="row">
 
 						@foreach ($gallery as $gal)
@@ -55,12 +55,11 @@
 						</div>
 						@endforeach
 					</div>
-					
-			
+				
 					</div>
 				</div>
 			</div>
-		
+
 		<!-- BODY -->
 
 @endsection
