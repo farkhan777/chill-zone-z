@@ -105,36 +105,32 @@
 						<h1 id="latest-template" class="latest_post_h1 brdr_line">Latest Blog</h1>
 					</div>
 					<div class="row">
+
+					@foreach ($home as $homee)
 						<div class="col-12 col-md-6 col-lg-4">
 							<a href="{{ route('blog.index') }}">
 								<div class="home_card">
 									<div class="home_card_top">
-										<img src="{{ asset('img/card3.jpg') }}" alt="image">
+										<img src="{{ asset('uploads/blogs/'.$homee->featuredImage) }}" alt="image">
 									</div>
 									<div class="home_card_bottom">
 										<div class="home_card_bottom_text">
 											<ul class="home_card_bottom_text_ul">
 												<li>
-													<a href="{{ route('blog.index') }}">engineering</a>
+													<a href="{{ route('blog.index') }}">{{ $homee->metaDescription }}</a>
 													<span><i class="fas fa-angle-right"></i></span>
 												</li>
-												<li>
-													<a href="{{ route('blog.index') }}">data science and database</a>
-												</li>
+												<li><a href="{{ route('blog.index') }}">{{ $homee->slug }}</a></li>
 											</ul>
 											<a href="{{ route('blog.index') }}">
-												<h2 class="home_card_h2">Semi-supervised Image Classification with Unlabeled Data</h2>
+												<h2 class="home_card_h2">{{ $homee->title }}</h2>
 											</a>
-											<p class="post_p">
-												Supervised learning is the key to computer vision and deep learning. However, what happens when you don’t have access to large, human-labeled datasets?
-
-												In this article, Toptal Computer Vision Developer Urwa Muaz demonstrates the potential of semi-supervised image classification using unlabeled datasets.
-											</p>
+											<p class="post_p">{{ $homee->post }}</p>
 											<div class="home_card_bottom_tym">
 												<div class="home_card_btm_r8">
-												<a href="contact_me.html"><p class="author_name">Amy Sept</p></a>
+												<a href="contact_me.html"><p class="author_name">Cz</p></a>
 													<ul class="home_card_btm_r8_ul">
-														<li>Dec 4, 2019</li>
+														<li>{{ $homee->created_at }}</li>
 														<li><span class="dot"></span>3 Min Read</li>
 													</ul>
 												</div>
@@ -144,199 +140,8 @@
 								</div>
 							</a>
 						</div>
-						<div class="col-12 col-md-6 col-lg-4">
-							<a href="{{ route('blog.index') }}">
-								<div class="home_card">
-									<div class="home_card_top">
-										<img src="{{ asset('img/card2.jpg') }}" alt="image">
-									</div>
-									<div class="home_card_bottom">
-										<div class="home_card_bottom_text">
-											<ul class="home_card_bottom_text_ul">
-												<li>
-													<a href="{{ route('blog.index') }}">engineering</a>
-													<span><i class="fas fa-angle-right"></i></span>
-												</li>
-												<li>
-													<a href="{{ route('blog.index') }}">data science and database</a>
-												</li>
-											</ul>
-											<a href="{{ route('blog.index') }}">
-												<h2 class="home_card_h2">Semi-supervised Image Classification with Unlabeled Data</h2>
-											</a>
-											<p class="post_p">
-												Supervised learning is the key to computer vision and deep learning. However, what happens when you don’t have access to large, human-labeled datasets?
-
-												In this article, Toptal Computer Vision Developer Urwa Muaz demonstrates the potential of semi-supervised image classification using unlabeled datasets.
-											</p>
-											<div class="home_card_bottom_tym">
-												<div class="home_card_btm_r8">
-												<a href="contact_me.html"><p class="author_name">Amy Sept</p></a>
-													<ul class="home_card_btm_r8_ul">
-														<li>Dec 4, 2019</li>
-														<li><span class="dot"></span>3 Min Read</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-12 col-md-6 col-lg-4">
-							<a href="{{ route('blog.index') }}">
-								<div class="home_card">
-									<div class="home_card_top">
-										<img src="{{ asset('img/card1.jpg') }}" alt="image">
-									</div>
-									<div class="home_card_bottom">
-										<div class="home_card_bottom_text">
-											<ul class="home_card_bottom_text_ul">
-												<li>
-													<a href="{{ route('blog.index') }}">engineering</a>
-													<span><i class="fas fa-angle-right"></i></span>
-												</li>
-												<li>
-													<a href="{{ route('blog.index') }}">data science and database</a>
-												</li>
-											</ul>
-											<a href="{{ route('blog.index') }}">
-												<h2 class="home_card_h2">Semi-supervised Image Classification with Unlabeled Data</h2>
-											</a>
-											<p class="post_p">
-												Supervised learning is the key to computer vision and deep learning. However, what happens when you don’t have access to large, human-labeled datasets?
-
-												In this article, Toptal Computer Vision Developer Urwa Muaz demonstrates the potential of semi-supervised image classification using unlabeled datasets.
-											</p>
-											<div class="home_card_bottom_tym">
-												<div class="home_card_btm_r8">
-												<a href="contact_me.html"><p class="author_name">Amy Sept</p></a>
-													<ul class="home_card_btm_r8_ul">
-														<li>Dec 4, 2019</li>
-														<li><span class="dot"></span>3 Min Read</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-12 col-md-6 col-lg-4">
-							<a href="{{ route('blog.index') }}">
-								<div class="home_card">
-									<div class="home_card_top">
-										<img src="{{ asset('img/card3.jpg') }}" alt="image">
-									</div>
-									<div class="home_card_bottom">
-										<div class="home_card_bottom_text">
-											<ul class="home_card_bottom_text_ul">
-												<li>
-													<a href="{{ route('blog.index') }}">engineering</a>
-													<span><i class="fas fa-angle-right"></i></span>
-												</li>
-												<li>
-													<a href="{{ route('blog.index') }}">data science and database</a>
-												</li>
-											</ul>
-											<a href="{{ route('blog.index') }}">
-												<h2 class="home_card_h2">Semi-supervised Image Classification with Unlabeled Data</h2>
-											</a>
-											<p class="post_p">
-												Supervised learning is the key to computer vision and deep learning. However, what happens when you don’t have access to large, human-labeled datasets?
-
-												In this article, Toptal Computer Vision Developer Urwa Muaz demonstrates the potential of semi-supervised image classification using unlabeled datasets.
-											</p>
-											<div class="home_card_bottom_tym">
-												<div class="home_card_btm_r8">
-												<a href="contact_me.html"><p class="author_name">Amy Sept</p></a>
-													<ul class="home_card_btm_r8_ul">
-														<li>Dec 4, 2019</li>
-														<li><span class="dot"></span>3 Min Read</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-12 col-md-6 col-lg-4">
-							<a href="{{ route('blog.index') }}">
-								<div class="home_card">
-									<div class="home_card_top">
-										<img src="{{ asset('img/card2.jpg') }}" alt="image">
-									</div>
-									<div class="home_card_bottom">
-										<div class="home_card_bottom_text">
-											<ul class="home_card_bottom_text_ul">
-												<li>
-													<a href="{{ route('blog.index') }}">engineering</a>
-													<span><i class="fas fa-angle-right"></i></span>
-												</li>
-												<li>
-													<a href="{{ route('blog.index') }}">data science and database</a>
-												</li>
-											</ul>
-											<a href="{{ route('blog.index') }}">
-												<h2 class="home_card_h2">Semi-supervised Image Classification with Unlabeled Data</h2>
-											</a>
-											<p class="post_p">
-												Supervised learning is the key to computer vision and deep learning. However, what happens when you don’t have access to large, human-labeled datasets?
-
-												In this article, Toptal Computer Vision Developer Urwa Muaz demonstrates the potential of semi-supervised image classification using unlabeled datasets.
-											</p>
-											<div class="home_card_bottom_tym">
-												<div class="home_card_btm_r8">
-												<a href="contact_me.html"><p class="author_name">Amy Sept</p></a>
-													<ul class="home_card_btm_r8_ul">
-														<li>Dec 4, 2019</li>
-														<li><span class="dot"></span>3 Min Read</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
-						<div class="col-12 col-md-6 col-lg-4">
-							<a href="{{ route('blog.index') }}">
-								<div class="home_card">
-									<div class="home_card_top">
-										<img src="{{ asset('img/card1.jpg') }}" alt="image">
-									</div>
-									<div class="home_card_bottom">
-										<div class="home_card_bottom_text">
-											<ul class="home_card_bottom_text_ul">
-												<li>
-													<a href="{{ route('blog.index') }}">engineering</a>
-													<span><i class="fas fa-angle-right"></i></span>
-												</li>
-												<li><a href="{{ route('blog.index') }}">data science and database</a></li>
-											</ul>
-											<a href="{{ route('blog.index') }}">
-												<h2 class="home_card_h2">Semi-supervised Image Classification with Unlabeled Data</h2>
-											</a>
-											<p class="post_p">
-												Supervised learning is the key to computer vision and deep learning. However, what happens when you don’t have access to large, human-labeled datasets?
-
-												In this article, Toptal Computer Vision Developer Urwa Muaz demonstrates the potential of semi-supervised image classification using unlabeled datasets.
-											</p>
-											<div class="home_card_bottom_tym">
-												<div class="home_card_btm_r8">
-												<a href="contact_me.html"><p class="author_name">Amy Sept</p></a>
-													<ul class="home_card_btm_r8_ul">
-														<li>Dec 4, 2019</li>
-														<li><span class="dot"></span>3 Min Read</li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</a>
-						</div>
+						@endforeach
+                        
 					</div>
 				</div>
 			</div>
