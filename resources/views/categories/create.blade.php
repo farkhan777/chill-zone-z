@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Create Blogs')
+@section('title', 'Create Categories')
 @section('content')
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -11,7 +11,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('dashboard.index') }}">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('blogs.index') }}">Blogs</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('categories.index') }}">Category</a></li>
                         <li class="breadcrumb-item active">Create</li>
                     </ol>
                 </div><!-- /.col -->
@@ -29,7 +29,7 @@
                     <h3 class="card-title">Create Data</h3>
                 </div>
                 <!-- /.card-header -->
-                <form action="{{ route('blogs.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('categories.store') }}" method="POST" enctype="multipart/form-data">
                     @CSRF
                     <div class="card-body">
                         <div class="row">
@@ -38,6 +38,13 @@
                                     <label for="title">Category Name</label>
                                     <input type="text" name="categoryName" class="form-control @error('title') is-invalid @enderror" placeholder="Category Name">
                                     <small class="text-danger">@error('categoryName') {{$message}} @enderror</small>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="title">Project Link</label>
+                                    <input type="text" name="projectLink" class="form-control @error('projectLink') is-invalid @enderror" placeholder="Project Link">
+                                    <small class="text-danger">@error('projectLink') {{$message}} @enderror</small>
                                 </div>
                             </div>
                             <div class="col-6">
@@ -52,7 +59,7 @@
                     <!-- /.row -->
                     <div class="card-footer">
                         <div class="d-flex justify-content-end">
-                            <a href="{{ route('blogs.index') }}" class="m-1 btn btn-outline-danger">Back</a>
+                            <a href="{{ route('categories.index') }}" class="m-1 btn btn-outline-danger">Back</a>
                             <button type="submit" class="m-1 btn btn-success">Create</button>
                         </div>
                     </div>
