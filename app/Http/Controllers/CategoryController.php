@@ -68,8 +68,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::findOrFail($id);
-        return view('categories.edit', compact('category'));    }
+        $categories = Category::findOrFail($id);
+        return view('categories.edit', compact('categories'));    }
 
     /**
      * Update the specified resource in storage.
@@ -91,7 +91,7 @@ class CategoryController extends Controller
             }
             $file = $request->file('iconImage');
             $filename  = time() . '.' . $file->getClientOriginalExtension();
-            $file->move('uploads/tags/', $filename);
+            $file->move('uploads/categories/', $filename);
             $categories->iconImage = $filename;
         }
         $categories->update();

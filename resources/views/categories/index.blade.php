@@ -41,7 +41,6 @@
                                 <th>Category Name</th>
                                 <th>Project Link</th>
                                 <th>Featured Image</th>
-                                <th>Meta Description</th>
                                 <th>Created At</th>
                                 <th>Action</th>
                             </tr>
@@ -74,7 +73,6 @@
                                 <th>Category Name</th>
                                 <th>Project Link</th>
                                 <th>Featured Image</th>
-                                <th>Meta Description</th>
                                 <th>Created At</th>
                                 <th>Action</th>
                             </tr>
