@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>News Admin | @yield('title')</title>
-    <link rel="Icon" href="{{ asset('background-img/cherry-blossom.png') }}">
+    <title>ChillZone Admin | @yield('title')</title>
+    <link rel="Icon" href="{{ asset('img/czz.png') }}">
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -65,7 +65,7 @@
             <a href="index3.html" class="brand-link">
                 <img src="{{ asset('img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Tokyo Travel Guide</span>
+                <span class="brand-text font-weight-light">ChillZone</span>
             </a>
 
             <!-- Sidebar -->
@@ -73,7 +73,7 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="{{ asset('background-img/farkhan.jpg') }}" class="img-circle elevation-2"
+                        <img src="{{ asset('img/czz.png') }}" class="img-circle elevation-2"
                             alt="User Image">
                     </div>
                     <div class="info">

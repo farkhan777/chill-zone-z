@@ -32,7 +32,7 @@
 					<div class="col-12 col-md-10 col-lg-8">
 						<div class="row">
 							<div class="col-12 col-md-4 col-lg-4">
-								<a href="./blog_post.html">
+								<a href="{{ route('blog.index') }}">
 									<div class="banner_box">
 										<i class="fab fa-laravel"></i>
 										<h3 class="banner_box_h3">Laravel</h3>
@@ -42,7 +42,7 @@
 							</div>
 
 							<div class="col-12 col-md-4 col-lg-4">
-								<a href="./blog_post.html">
+								<a href="{{ route('blog.index') }}">
 									<div class="banner_box">
 										<i class="fab fa-bootstrap"></i>
 										<h3 class="banner_box_h3">Bootstrap</h3>
@@ -52,7 +52,7 @@
 							</div>
 
 							<div class="col-12 col-md-4 col-lg-4">
-								<a href="./blog_post.html">
+								<a href="{{ route('blog.index') }}">
 									<div class="banner_box">
 										<i class="fab fa-angular"></i>
 										<h3 class="banner_box_h3">Angular</h3>
@@ -62,7 +62,7 @@
 							</div>
 
 							<div class="col-12 col-md-4 col-lg-4">
-								<a href="./blog_post.html">
+								<a href="{{ route('blog.index') }}">
 									<div class="banner_box">
 										<i class="fab fa-vuejs"></i>
 										<h3 class="banner_box_h3">Vue JS</h3>
@@ -72,7 +72,7 @@
 							</div>
 
 							<div class="col-12 col-md-4 col-lg-4">
-								<a href="./blog_post.html">
+								<a href="{{ route('blog.index') }}">
 									<div class="banner_box">
 										<i class="fab fa-react"></i>
 										<h3 class="banner_box_h3">React</h3>
@@ -82,7 +82,7 @@
 							</div>
 
 							<div class="col-12 col-md-4 col-lg-4">
-								<a href="./blog_post.html">
+								<a href="{{ route('blog.index') }}">
 									<div class="banner_box">
 										<i class="fab fa-node-js"></i>
 										<h3 class="banner_box_h3">Node JS</h3>
@@ -106,7 +106,7 @@
 					</div>
 					<div class="row">
 						<div class="col-12 col-md-6 col-lg-4">
-							<a href="blog_post.html">
+							<a href="{{ route('blog.index') }}">
 								<div class="home_card">
 									<div class="home_card_top">
 										<img src="{{ asset('img/card3.jpg') }}" alt="image">
@@ -115,14 +115,14 @@
 										<div class="home_card_bottom_text">
 											<ul class="home_card_bottom_text_ul">
 												<li>
-													<a href="blog_post.html">engineering</a>
+													<a href="{{ route('blog.index') }}">engineering</a>
 													<span><i class="fas fa-angle-right"></i></span>
 												</li>
 												<li>
-													<a href="blog_post.html">data science and database</a>
+													<a href="{{ route('blog.index') }}">data science and database</a>
 												</li>
 											</ul>
-											<a href="blog_post.html">
+											<a href="{{ route('blog.index') }}">
 												<h2 class="home_card_h2">Semi-supervised Image Classification with Unlabeled Data</h2>
 											</a>
 											<p class="post_p">
@@ -145,7 +145,7 @@
 							</a>
 						</div>
 						<div class="col-12 col-md-6 col-lg-4">
-							<a href="blog_post.html">
+							<a href="{{ route('blog.index') }}">
 								<div class="home_card">
 									<div class="home_card_top">
 										<img src="{{ asset('img/card2.jpg') }}" alt="image">
@@ -154,14 +154,14 @@
 										<div class="home_card_bottom_text">
 											<ul class="home_card_bottom_text_ul">
 												<li>
-													<a href="blog_post.html">engineering</a>
+													<a href="{{ route('blog.index') }}">engineering</a>
 													<span><i class="fas fa-angle-right"></i></span>
 												</li>
 												<li>
-													<a href="blog_post.html">data science and database</a>
+													<a href="{{ route('blog.index') }}">data science and database</a>
 												</li>
 											</ul>
-											<a href="blog_post.html">
+											<a href="{{ route('blog.index') }}">
 												<h2 class="home_card_h2">Semi-supervised Image Classification with Unlabeled Data</h2>
 											</a>
 											<p class="post_p">
@@ -184,7 +184,7 @@
 							</a>
 						</div>
 						<div class="col-12 col-md-6 col-lg-4">
-							<a href="blog_post.html">
+							<a href="{{ route('blog.index') }}">
 								<div class="home_card">
 									<div class="home_card_top">
 										<img src="{{ asset('img/card1.jpg') }}" alt="image">
@@ -193,14 +193,14 @@
 										<div class="home_card_bottom_text">
 											<ul class="home_card_bottom_text_ul">
 												<li>
-													<a href="blog_post.html">engineering</a>
+													<a href="{{ route('blog.index') }}">engineering</a>
 													<span><i class="fas fa-angle-right"></i></span>
 												</li>
 												<li>
-													<a href="blog_post.html">data science and database</a>
+													<a href="{{ route('blog.index') }}">data science and database</a>
 												</li>
 											</ul>
-											<a href="blog_post.html">
+											<a href="{{ route('blog.index') }}">
 												<h2 class="home_card_h2">Semi-supervised Image Classification with Unlabeled Data</h2>
 											</a>
 											<p class="post_p">
@@ -223,7 +223,7 @@
 							</a>
 						</div>
 						<div class="col-12 col-md-6 col-lg-4">
-							<a href="blog_post.html">
+							<a href="{{ route('blog.index') }}">
 								<div class="home_card">
 									<div class="home_card_top">
 										<img src="{{ asset('img/card3.jpg') }}" alt="image">
@@ -232,14 +232,14 @@
 										<div class="home_card_bottom_text">
 											<ul class="home_card_bottom_text_ul">
 												<li>
-													<a href="blog_post.html">engineering</a>
+													<a href="{{ route('blog.index') }}">engineering</a>
 													<span><i class="fas fa-angle-right"></i></span>
 												</li>
 												<li>
-													<a href="blog_post.html">data science and database</a>
+													<a href="{{ route('blog.index') }}">data science and database</a>
 												</li>
 											</ul>
-											<a href="blog_post.html">
+											<a href="{{ route('blog.index') }}">
 												<h2 class="home_card_h2">Semi-supervised Image Classification with Unlabeled Data</h2>
 											</a>
 											<p class="post_p">
@@ -262,7 +262,7 @@
 							</a>
 						</div>
 						<div class="col-12 col-md-6 col-lg-4">
-							<a href="blog_post.html">
+							<a href="{{ route('blog.index') }}">
 								<div class="home_card">
 									<div class="home_card_top">
 										<img src="{{ asset('img/card2.jpg') }}" alt="image">
@@ -271,14 +271,14 @@
 										<div class="home_card_bottom_text">
 											<ul class="home_card_bottom_text_ul">
 												<li>
-													<a href="blog_post.html">engineering</a>
+													<a href="{{ route('blog.index') }}">engineering</a>
 													<span><i class="fas fa-angle-right"></i></span>
 												</li>
 												<li>
-													<a href="blog_post.html">data science and database</a>
+													<a href="{{ route('blog.index') }}">data science and database</a>
 												</li>
 											</ul>
-											<a href="blog_post.html">
+											<a href="{{ route('blog.index') }}">
 												<h2 class="home_card_h2">Semi-supervised Image Classification with Unlabeled Data</h2>
 											</a>
 											<p class="post_p">
@@ -301,7 +301,7 @@
 							</a>
 						</div>
 						<div class="col-12 col-md-6 col-lg-4">
-							<a href="blog_post.html">
+							<a href="{{ route('blog.index') }}">
 								<div class="home_card">
 									<div class="home_card_top">
 										<img src="{{ asset('img/card1.jpg') }}" alt="image">
@@ -310,12 +310,12 @@
 										<div class="home_card_bottom_text">
 											<ul class="home_card_bottom_text_ul">
 												<li>
-													<a href="blog_post.html">engineering</a>
+													<a href="{{ route('blog.index') }}">engineering</a>
 													<span><i class="fas fa-angle-right"></i></span>
 												</li>
-												<li><a href="blog_post.html">data science and database</a></li>
+												<li><a href="{{ route('blog.index') }}">data science and database</a></li>
 											</ul>
-											<a href="blog_post.html">
+											<a href="{{ route('blog.index') }}">
 												<h2 class="home_card_h2">Semi-supervised Image Classification with Unlabeled Data</h2>
 											</a>
 											<p class="post_p">
