@@ -16,7 +16,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
         return view('categories.index', compact('categories'));
-     }
+    }
 
     /**
      * Show the form for creating a new resource.
