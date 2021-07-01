@@ -1,7 +1,7 @@
 @extends('layouts.static')
 @section('homeContent')
 
-    		<!-- BANNER -->
+		<!-- BANNER -->
 		<div class="blog_banner">
 			<div class="container">
 				<div class="blog_banner_info">
@@ -34,32 +34,37 @@
 					<div class="col-12 col-md-8 col-lg-5">
 						<div class="cmnt_frm">
 									<h2 class="post_dtls_title2 pad_b20" style=" text-align: center;font-size: 28px;">Contact Us</h2>
-								<div class="cmnt_frm_all">
-									<div class="row">
-										<div class="col-12 col-md-12 col-lg-12">
-											<div class="cmnt_input">
-												<p>NAME</p>
-												<input type="text" placeholder="Enter your name">
+								
+								<form action="{{ route('messages.store') }}" method="POST" enctype="multipart/form-data">
+									@CSRF
+									<div class="cmnt_frm_all">
+										<div class="row">
+											<div class="col-12 col-md-12 col-lg-12">
+												<div class="cmnt_input">
+													<p>NAME</p>
+													<input type="text" name="name" placeholder="Enter your name">
+												</div>
 											</div>
-										</div>
-										<div class="col-12 col-md-12 col-lg-12">
-											<div class="cmnt_input">
-												<p>E-MAIL</p>
-												<input type="text" placeholder="Enter your E-MAIL">
+											<div class="col-12 col-md-12 col-lg-12">
+												<div class="cmnt_input">
+													<p>E-MAIL</p>
+													<input type="text" name="email" placeholder="Enter your E-MAIL">
+												</div>
 											</div>
-										</div>
-										<div class="col-12 col-md-12 col-lg-12">
-											<div class="cmnt_input">
-												<p class="mar_b10">MESSAGE</p>
-												<textarea placeholder="Type your comment" name="message" required=""></textarea>
+											<div class="col-12 col-md-12 col-lg-12">
+												<div class="cmnt_input">
+													<p class="mar_b10" name="message">MESSAGE</p>
+													<textarea placeholder="Type your comment" name="message" required=""></textarea>
+												</div>
 											</div>
-										</div>
-										<div class="dtls_frm_btn mar_t20">
-											<button class="btn1">send me</button>
+											<div class="dtls_frm_btn mar_t20">
+												<button type="submit" class="btn1">send me</button>
+											</div>
 										</div>
 									</div>
-								</div>
-							</div>
+								</form>
+
+						</div>
 					</div>
 				</div>
 			</div>
