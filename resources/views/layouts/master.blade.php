@@ -123,6 +123,14 @@
                                 </p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a href="{{ route('messages.index') }}" class="nav-link {{Request::is('*messages*') ? 'active' : ''}}">
+                                <i class="nav-icon fas fa-box-open"></i>
+                                <p>
+                                    Message
+                                </p>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

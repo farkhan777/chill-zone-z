@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class MessageController extends Controller
 {
@@ -14,7 +15,8 @@ class MessageController extends Controller
      */
     public function index()
     {
-
+        $messages = Message::all();
+        return view('messages.index',['messages'=>$messages]);
     }
 
     /**
@@ -86,6 +88,7 @@ class MessageController extends Controller
      */
     public function destroy($id)
     {
-
+        Message::findOrFail($id)->delete();
+        return redirect()->back();
     }
 }
