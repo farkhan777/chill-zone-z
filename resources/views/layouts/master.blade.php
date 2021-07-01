@@ -117,7 +117,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('categories.index') }}" class="nav-link {{Request::is('*categories*') ? 'active' : ''}}">
-                                <i class="nav-icon fas fa-box-open"></i>
+                                <i class="nav-icon fas fa-clock"></i>
                                 <p>
                                     Category
                                 </p>
@@ -125,7 +125,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('messages.index') }}" class="nav-link {{Request::is('*messages*') ? 'active' : ''}}">
-                                <i class="nav-icon fas fa-box-open"></i>
+                                <i class="nav-icon fas fa-users"></i>
                                 <p>
                                     Message
                                 </p>
