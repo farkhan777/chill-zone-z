@@ -44,7 +44,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="post">Post</label>
-                                    <textarea name="post" class="form-control @error('post') is-invalid @enderror" placeholder="Blog Post" value="{{$blogs->post}}"></textarea>
+                                    <input type="text" name="post" class="form-control @error('post') is-invalid @enderror" placeholder="Blog Post" value="{{$blogs->post}}">
                                     <small class="text-danger">@error('post') {{$message}} @enderror</small>
                                 </div>
                             </div>
