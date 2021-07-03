@@ -42,12 +42,13 @@ class BlogController extends Controller
         $blogs->post = $request->input('post');
         $blogs->post_excerpt = $request->input('post_excerpt');
         $blogs->slug = $request->input('slug');
-        if( $request->hasFile('featuredImage') ) {
-            $file = $request->file('featuredImage');
-            $filename  = time() . '.' . $file->getClientOriginalExtension();
-            $file->move('uploads/blogs/', $filename);
-            $blogs->featuredImage = $filename;
-        }
+        $blogs->featuredImage = $request->input('featuredImage');
+        // if( $request->hasFile('featuredImage') ) {
+        //     $file = $request->file('featuredImage');
+        //     $filename  = time() . '.' . $file->getClientOriginalExtension();
+        //     $file->move('uploads/blogs/', $filename);
+        //     $blogs->featuredImage = $filename;
+        // }
         $blogs->metaDescription = $request->input('metaDescription');
         $blogs->save();
         return redirect()->back()->with('status','Blog Image Added Successfully');
@@ -90,17 +91,18 @@ class BlogController extends Controller
         $blogs->post = $request->input('post');
         $blogs->post_excerpt = $request->input('post_excerpt');
         $blogs->slug = $request->input('slug');
-        if( $request->hasFile('featuredImage') ) {
-            $destination= 'uploads/blogs/'.$blogs->featuredImage;
-            if (File::exists($destination))
-            {
-                File::delete($destination);
-            }
-            $file = $request->file('featuredImage');
-            $filename  = time() . '.' . $file->getClientOriginalExtension();
-            $file->move('uploads/blogs/', $filename);
-            $blogs->featuredImage = $filename;
-        }
+        $blogs->featuredImage = $request->input('featuredImage');
+        // if( $request->hasFile('featuredImage') ) {
+        //     $destination= 'uploads/blogs/'.$blogs->featuredImage;
+        //     if (File::exists($destination))
+        //     {
+        //         File::delete($destination);
+        //     }
+        //     $file = $request->file('featuredImage');
+        //     $filename  = time() . '.' . $file->getClientOriginalExtension();
+        //     $file->move('uploads/blogs/', $filename);
+        //     $blogs->featuredImage = $filename;
+        // }
         $blogs->metaDescription = $request->input('metaDescription');
         $blogs->update();
         return redirect()->back()->with('status','Blog Image Updated Successfully');

@@ -111,7 +111,7 @@
 							<a href="{{ route('blog.index') }}">
 								<div class="home_card">
 									<div class="home_card_top">
-										<img src="{{ asset('uploads/blogs/'.$homee->featuredImage) }}" alt="image">
+										<img src="{{ asset($homee->featuredImage) }}" alt="image">
 									</div>
 									<div class="home_card_bottom">
 										<div class="home_card_bottom_text">

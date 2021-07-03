@@ -64,7 +64,7 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="featuredImage">Featured Image</label>
-                                    <input type="file" name="featuredImage" class="form-control @error('featuredImage') is-invalid @enderror" placeholder="Blog Featured Image">
+                                    <input type="text" name="featuredImage" class="form-control @error('featuredImage') is-invalid @enderror" placeholder="Blog Featured Image">
                                     <small class="text-danger">@error('featuredImage') {{$message}} @enderror</small>
                                 </div>
                             </div>
