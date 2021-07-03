@@ -63,3 +63,4 @@ Route::resource('messages', MessageController::class);
 Route::get('/',[HomeController::class, 'show'])->name('home.index');
 Route::get('/gallery',[GalleryController::class, 'show'])->name('gallery.index');
 Route::get('/messages',[MessageController::class, 'index'])->name('messages.index');
+Route::get('/admin',[BlogController::class, 'show'])->name('dashboard.index');

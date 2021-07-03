@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Category;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -18,6 +20,20 @@ class BlogController extends Controller
         $blogs = Blog::all();
         return view('blogs.index', compact('blogs'));
     }
+
+    public function show()
+    {
+        $blogs = Blog::all();
+        $categories = Category::all();
+        $messages = Message::all();
+        return view('index', compact('blogs','categories','messages'));
+    }
+
+    // public function countCategory()
+    // {
+    //     $categories = Category::all();
+    //     return view('index', compact('categories'));
+    // }
 
     /**
      * Show the form for creating a new resource.
@@ -60,10 +76,6 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        
-    }
 
     /**
      * Show the form for editing the specified resource.

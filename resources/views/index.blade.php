@@ -28,14 +28,14 @@
         <!-- small box -->
         <div class="small-box bg-info">
           <div class="inner">
-            <h3>9</h3>
+            <h3>{{ $blogs->count() }}</h3>
 
             <p>Total Blog Post</p>
           </div>
           <div class="icon">
             <i class="ion ion-bag"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('blogs.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -43,14 +43,14 @@
         <!-- small box -->
         <div class="small-box bg-success">
           <div class="inner">
-            <h3>3<sup style="font-size: 20px"></sup></h3>
+            <h3>{{ $categories->count() }}<sup style="font-size: 20px"></sup></h3>
 
             <p>Total Gallery</p>
           </div>
           <div class="icon">
             <i class="ion ion-stats-bars"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('categories.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -58,14 +58,14 @@
         <!-- small box -->
         <div class="small-box bg-warning">
           <div class="inner">
-            <h3>3</h3>
+            <h3>{{ $messages->count() }}</h3>
 
             <p>Total Message</p>
           </div>
           <div class="icon">
             <i class="ion ion-person-add"></i>
           </div>
-          <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('messages.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
     </div>
