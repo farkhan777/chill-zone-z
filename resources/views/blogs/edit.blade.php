@@ -65,8 +65,8 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label for="featuredImage">Featured Image</label>
-                                    <input type="file" name="featuredImage" class="form-control @error('featuredImage') is-invalid @enderror" placeholder="Author Featured Image" value="{{$blogs->featuredImage}}">
-                                    <img src="{{ asset('uploads/blogs/'.$blogs->featuredImage) }}" width="100px" height="80px" alt="Image">
+                                    <input type="text" name="featuredImage" class="form-control @error('featuredImage') is-invalid @enderror" placeholder="Author Featured Image" value="{{$blogs->featuredImage}}">
+                                    <img src="{{ asset($blogs->featuredImage) }}" width="100px" height="80px" alt="Image">
                                     <small class="text-danger">@error('featuredImage') {{$message}} @enderror</small>
                                 </div>
                             </div>

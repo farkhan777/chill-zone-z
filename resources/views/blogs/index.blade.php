@@ -60,7 +60,8 @@
                                     <td>{{ $blog->slug }}</td>
                                     <td>{{ $blog->user_id }}</td>
                                     <td>
-                                        <img src="{{ asset('uploads/blogs/'.$blog->featuredImage) }}" width="100px" height="80px" alt="Image">
+                                        <!-- <img src="{{ asset('uploads/blogs/'.$blog->featuredImage) }}" width="100px" height="80px" alt="Image"> -->
+                                        <img src="{{ asset( $blog->featuredImage) }}" width="100px" height="80px" alt="Image">
                                     </td>
                                     <td>{{ $blog->metaDescription }}</td>
                                     <td>{{ $blog->views }}</td>
